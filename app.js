@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const newJokeButton = document.querySelector('.button')
   const copiedMessage = document.createElement('div')
   copiedMessage.classList.add('copied-message')
+  copiedMessage.textContent = 'Copied!'
+
+  // Function to show the copied message
+  function showCopiedMessage() {
+    copiedMessage.classList.add('show')
+    setTimeout(() => {
+      copiedMessage.classList.remove('show')
+    }, 2000)
+  }
 
   // Function to fetch a new dad joke
   async function fetchJoke() {
@@ -30,9 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyButton = document.createElement('button')
     copyButton.textContent = 'Copy'
     copyButton.classList.add('copy-button')
+
+    // Add copy functionality
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(joke)
+        showCopiedMessage()
+      } catch (err) {
+        console.error('Failed to copy text:', err)
+      }
+    })
+
     // Add elements to the list item
-    li.appendChild(jokeText) // Add joke text
-    li.appendChild(copyButton) // Add the button after the text
+    li.appendChild(jokeText)
+    li.appendChild(copyButton)
+
     // Add animation delay to create staggered effect
     li.style.animationDelay = `${jokesContainer.children.length * 0.1}s`
     jokesContainer.appendChild(li)
