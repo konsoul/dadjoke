@@ -43,6 +43,7 @@ body {
 }
 
 #jokes li {
+  position: relative;
   display: flex; /* Align items horizontally */
   align-items: center; /* Vertically center both text and button */
   flex-wrap: wrap; /* Allow text to wrap to multiple lines */
@@ -86,20 +87,18 @@ body {
   margin-bottom: 2rem;
 }
 .copied-message {
-  position: fixed;
-  bottom: 20px;
+  position: absolute; /* Changed from fixed */
   left: 50%;
+  transform: translateX(-50%);
   background-color: #4caf50;
   color: white;
-  padding: 10px 5px;
-  border-radius: 15px;
+  padding: 8px 16px;
+  border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 45%; /* This puts it at the bottom of the container */
+  margin-top: 10px; /* Add some space between joke and message */
 }
 
 .copied-message.show {
