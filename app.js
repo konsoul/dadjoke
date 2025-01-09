@@ -30,16 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addJoke(joke) {
     const li = document.createElement('li')
-
-    // Create a wrapper for the joke text
     const jokeText = document.createElement('span')
     jokeText.textContent = joke
 
-    // Create a "Copy" button
     const copyButton = document.createElement('button')
     copyButton.textContent = 'Copy'
     copyButton.classList.add('copy-button')
-
+    
     // Add copy functionality
     copyButton.addEventListener('click', async () => {
       try {
@@ -59,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     jokesContainer.appendChild(li)
   }
 
-  // Event listener for new joke button
+
   newJokeButton.addEventListener('click', async () => {
     // Remove the previous jokes
     while (jokesContainer.firstChild) {

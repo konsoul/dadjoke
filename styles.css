@@ -22,16 +22,6 @@ body {
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.832);
 }
 
-.card {
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0 0 1px rgba(10, 10, 10, 0.02);
-}
-
-.copy-button {
-  display: flex;
-  text-align: center;
-}
-
 /* Position jokes in the middle of card image */
 #jokes {
   position: absolute;
