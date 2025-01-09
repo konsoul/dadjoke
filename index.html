@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dad Jokes!</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+  </head>
+
+  <body>
+    <section class="hero is-fullheight" id="custom-hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-3by2 has-position-relative">
+                <img src="./images/nostalgia.jpeg" alt="Placeholder image" />
+                <div class="joke-overlay">
+                  <ul id="jokes" class="text-shadow title is-3"></ul>
+                </div>
+              </figure>
+            </div>
+            <div class="card-content has-text-centered">
+              <div class="joke-container">
+                <h1 class="title is-1 has-text-centered text-shadow">
+                  Dad Jokes
+                </h1>
+              </div>
+              <button class="button is-warning is-large">New Joke</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>

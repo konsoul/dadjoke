@@ -1,0 +1,87 @@
+body {
+  background-color: aliceblue;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#custom-hero {
+  background-image: url('./images/nostalgia.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9; /* Changed from 90% to 0.9 for better browser support */
+}
+
+.text-shadow {
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.832);
+}
+
+.card {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+
+.copy-button {
+  display: flex;
+  text-align: center;
+}
+
+/* Position jokes in the middle of card image */
+#jokes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+}
+
+#jokes li {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Vertically center both text and button */
+  flex-wrap: wrap; /* Allow text to wrap to multiple lines */
+  color: white;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0; /* Start invisible */
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#jokes li .copy-button {
+  margin-left: 1rem; /* Add spacing between text and button */
+  background-color: #ffdd57; /* Matches the theme */
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Ensure button stays vertically centered */
+}
+
+#jokes li .copy-button:hover {
+  background-color: #fbc02d;
+  transform: scale(1.05);
+}
+
+.joke-overlay {
+  position: absolute;
+  z-index: 1; /* Ensure text appears above the overlay */
+  width: 100%;
+  height: 100%;
+}
+
+.joke-container h1 {
+  margin-bottom: 2rem;
+}
